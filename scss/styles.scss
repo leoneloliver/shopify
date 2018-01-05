@@ -1,0 +1,184 @@
+//prefix
+$el: 'news';
+$logo: 'logo-shopify';
+// fonts
+$font-family: Helvetica;
+$font-title: 24px;
+$font-field: 16px;
+$font-small: 12px;
+$font-weight-normal: 100;
+$font-weight-heavy: 400;
+// colors
+$white: #FFFFFF;
+$green: #7AB55C;
+$grey: #7B7B7B;
+$purple-light: #5c6ac4;
+$purple-dark: #000639;
+$red: #C23628;
+$purple-hover: #202e78;
+//sizes
+$full: 100%;
+$input-height: 50px;
+$line-height: 35px;
+$medium-device: 560px;
+$small-device: 541px;
+// modules
+@mixin transition-object($speed){
+  -webkit-transition: all $speed ease;
+  -moz-transition: all $speed ease;
+  -o-transition: all $speed ease;
+  -ms-transition: all $speed ease;
+  transition: all $speed ease;
+}
+// universal
+body{
+  margin: 0;
+  padding:0;
+  background: $purple-dark;
+  color: $white;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+}
+//components
+.#{$logo}{
+  margin: 0 auto;
+}
+.#{$logo}__svg-logo{
+  margin-top: 20px;
+  display: block;
+  height: auto;
+  width: 10rem;
+  max-height: 4rem;
+  @extend .#{$logo};
+}
+.#{$el}{
+  padding: 5px;
+  max-width: 500px;
+  margin: 40px auto;
+}
+.#{$el}__title{
+  font-size: $font-title;
+  line-height: $line-height;
+  font-weight: $font-weight-heavy;
+}
+.#{$el}__hr{
+  width: 30px;
+  clear: both;
+  margin-right: auto;
+  margin-left: 0;
+  border: 1px solid $green;
+  @include transition-object(.9s);
+}
+.#{$el}-sent__hr {
+  width: $full;
+  @include transition-object(.9s);
+}
+.#{$el}__text{
+  font-size: $font-field;
+}
+.#{$el}__input-text,.#{$el}__select{
+  font-size: $font-field;
+  color: $grey;
+  padding: 1.0625em 1em;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  font-weight: $font-weight-normal;
+}
+input::-webkit-input-placeholder {
+  color: $grey;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: $grey; 
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+  color: $grey; 
+}
+input:-ms-input-placeholder {  
+  color: $grey;
+}
+.#{$el}__input-text {
+  width: 270px;
+  height: $input-height;
+}
+.#{$el}__select {
+  width: 215px;
+  height: $input-height;
+  margin: 0;
+}
+.#{$el}__alert{
+  color: $red;
+  margin-top: 10px;
+  font-size: $font-small;
+  @include transition-object(.9s);
+  opacity: 9.9;
+}
+.#{$el}__alert--hide{
+  @include transition-object(.9s);
+  opacity: 0;
+}
+.#{$el}__submit {
+  background-color: $purple-light;
+  border: none;
+  width: $full;
+  padding: 15px;
+  color: #fff;
+  font-size: $font-field;
+  border-radius: 5px;
+  cursor: pointer;
+  height: $input-height+5;
+  @include transition-object(.9s);
+  font-weight: $font-weight-normal;
+  &:hover{
+    background: $purple-hover;
+    @include transition-object(.9s);
+  }  
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.footer a{
+  color: $white;
+}
+// points
+@media only screen and (max-width: $medium-device){
+  .#{$el} {
+    padding: 30px;
+    max-width: none;
+    margin: 0px auto;
+    width: auto;
+  }
+  .#{$el}__input-text {
+    width: 50.5%;
+  }
+  .#{$el}__select {
+    width: 46.5%;
+  }
+  .footer {
+    position: relative;
+  }
+}
+@media only screen and (max-width: $small-device){
+  h1.#{$el}__title, .#{$el}__text, .#{$el}__alert, ##{$el}__form {
+    text-align: center;
+  }
+  .#{$el}__hr {
+    margin-left: auto;
+  }
+  .#{$el}__input-text {
+    width: $full;
+    margin: 0;
+    width: -moz-available;
+    width: -webkit-fill-available;
+  }
+  .#{$el}__select {
+    width: $full;
+    margin: 0;
+    margin-top: 12px;
+  }
+}
