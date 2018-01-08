@@ -1,5 +1,5 @@
 # Shopify
-Shopify Test
+Shopify News
 
 
 ## Intructions:
