@@ -1,5 +1,5 @@
 # Shopify
-Shopify News - Subscribe
+Shopify - Subscribe
 
 ## Intructions:
 [See more](https://drive.google.com/file/d/1GUJrP1TUSpAo8mSPiE1srYuupQ71eRW3/view) 
